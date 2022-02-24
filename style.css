@@ -6,5 +6,72 @@
 
 
 body{
+  /* background-color: black; */
+  display:block;
+}
+
+.container{
+  max-width: 1200px;
+  margin: auto;
+  background: rgb(20, 12, 12);
+  padding: 10px;
+
+}
+
+.section1{
   background-color: black;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 200px;
+
+}
+
+.content1{
+  color: white;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* background-color: antiquewhite; */
+  /* height: 300px; */
+  width: 500px;
+  margin-left:300px;
+  /* margin-top: 300px; */
+}
+
+img{
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+}
+
+.scroll{
+  margin-top: 200px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.hr1{
+  color: rgb(126, 226, 233);
+  width: 30%;
+  height:60px;
+}
+
+
+
+
+/* SECTION TWO */
+
+.section2{
+  background-color: aliceblue;
+  margin-top: 200px;
+}
+
+.content2{
+  
+  width: 400px;
+  margin-left: 300px;
+  margin-top: 0px;
 }
