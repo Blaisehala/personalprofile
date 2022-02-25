@@ -39,9 +39,9 @@ a{
 }
 
 hr{
-  color: rgb(126, 226, 233);
+  color: rgb(21, 105, 214);
   width: 30%;
-  height:50%;
+  /* height:50%; */
 }
 
 img{
@@ -59,4 +59,19 @@ img{
   /* margin-top: 200px; */
   
 
+}
+
+
+/* SECTION 3 */
+.section3{
+  background-color: aqua;
+}
+
+.siz{
+  background-color: blue;
+  width: 500px;
+}
+
+.siz1{
+  width: 300px;
 }
