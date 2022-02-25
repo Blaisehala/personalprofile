@@ -40,8 +40,8 @@ a{
 
 hr{
   color: rgb(21, 105, 214);
-  width: 30%;
-  /* height:50%; */
+  width: 50%;
+  height:200px;
 }
 
 img{
@@ -68,7 +68,7 @@ img{
 }
 
 .siz{
-  background-color: blue;
+  /* background-color: blue; */
   width: 500px;
 }
 
