@@ -29,7 +29,8 @@ body{
 }
 
 .scroll{
-  margin-top: 200px;
+  color: blue;
+  /* margin-top: 200px; */
 }
 
 a{
@@ -40,7 +41,7 @@ a{
 hr{
   color: rgb(126, 226, 233);
   width: 30%;
-  height:100px;
+  height:50%;
 }
 
 img{
@@ -53,7 +54,8 @@ img{
 /* SECTION TWO */
 
 .section2{
-  background-color: aliceblue;
+  color: white;
+  /* background-color: aliceblue; */
   /* margin-top: 200px; */
   
 
