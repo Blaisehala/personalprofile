@@ -18,11 +18,11 @@ body{
 
 }
 
-.section1{
+/* .section1{ */
   /* background-color: rgb(198, 200, 219); */
 
 
-}
+/* } */
 
 .content1{
   color: white;
@@ -66,6 +66,7 @@ img{
 
 .about{
   background-image: url(https://wallpapercave.com/wp/wp3284839.gif);
+  /* background-image: url(https://i.makeagif.com/media/6-21-2021/Ml33kt.gif); */
   background-size: cover;
   background-repeat: no-repeat;
   /* height: 300px; */
@@ -92,4 +93,20 @@ img{
   color: white;
   text-align: center;
   /* vertical-align: middle; */
+}
+
+
+
+
+.fa-brands {
+
+  color: blue;
+  gap: 30px;
+  padding: 50px;
+
+}
+
+.fa-facebook{
+
+
 }
