@@ -40,8 +40,11 @@ a{
 
 hr{
   color: rgb(21, 105, 214);
-  width: 50%;
-  height:200px;
+  /* width:100px; */
+    margin: 0 auto;
+    height: 50px;
+
+   
 }
 
 img{
@@ -72,7 +75,8 @@ img{
 
 /* SECTION 3 */
 .section3{
-  background-color: aqua;
+  /* background-color: aqua; */
+  color: white;
 }
 
 .siz{
@@ -82,4 +86,10 @@ img{
 
 .siz1{
   width: 300px;
+}
+
+.work{
+  color: white;
+  text-align: center;
+  /* vertical-align: middle; */
 }
