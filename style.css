@@ -7,36 +7,60 @@
 
 body{
   background-color: black;
-  display:block;
+  /* display:block; */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .container{
-  width: 60%;
-  margin: auto;
+  width: 50%;
+  /* margin: auto; */
   /* background: rgb(51, 200, 108); */
   padding: 10px;
   font-style: ;
+  margin-top: 150px;
+  
 
 }
 
-/* .section1{ */
+img{
+  height: 200vh;
+  width: 500vw;
+}
+
+.pic{
+  background-color: aqua;
+  height:300px;
+}
+.section1{
   /* background-color: rgb(198, 200, 219); */
+width: 150%;
+scroll-snap-align: start;
 
-
-/* } */
+}
+.hala{
+  font-size: 100px;
+  
+}
 
 span{
-  font-size: 70px;
+  font-size: 100px;
   color:blue ;
 }
 
+
+.words{
+  font-size: 20px;
+  font-family: "dictact Gothic";
+  font-weight: 100;
+}
 .content1{
   color: white;
 }
 
 .scroll{
   color: blue;
-  /* margin-top: 200px; */
+ font-size: 20px;
 }
 
 a{
@@ -47,8 +71,9 @@ a{
 hr{
   color: rgb(21, 105, 214);
   /* width:100px; */
-    margin: 0 auto;
-    height: 50px;
+   
+    border:1.5px solid;
+  width: 130px;
 
    
 }
