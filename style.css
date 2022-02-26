@@ -61,6 +61,14 @@ img{
 
 }
 
+.about{
+  background-image: url(https://wallpapercave.com/wp/wp3284839.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: 300px; */
+  color: white;
+}
+
 
 /* SECTION 3 */
 .section3{
