@@ -15,6 +15,7 @@ body{
   margin: auto;
   /* background: rgb(51, 200, 108); */
   padding: 10px;
+  font-style: ;
 
 }
 
@@ -23,6 +24,11 @@ body{
 
 
 /* } */
+
+span{
+  font-size: 70px;
+  color:blue ;
+}
 
 .content1{
   color: white;
