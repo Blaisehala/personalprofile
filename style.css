@@ -96,17 +96,27 @@ img{
 }
 
 
+.email{
+  display: flex;
+  justify-content:center;
+  gap: 15px;
+  background-color: rgb(39, 102, 158);
+}
 
+.fa-envelope{
+  font-size: 20px;
+
+  margin-top: 5px;
+}
 
 .fa-brands {
 
   color: blue;
   gap: 30px;
   padding: 50px;
+  font-size: 20px;
 
 }
 
-.fa-facebook{
 
 
-}
