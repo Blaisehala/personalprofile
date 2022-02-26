@@ -30,7 +30,7 @@ img{
 
 .pic{
   background-color: aqua;
-  height:300px;
+  height:400px;
 }
 .section1{
   /* background-color: rgb(198, 200, 219); */
@@ -45,15 +45,25 @@ scroll-snap-align: start;
 
 span{
   font-size: 100px;
-  color:blue ;
+  color:#5f99ff;
 }
 
 
 .words{
   font-size: 20px;
-  font-family: "dictact Gothic";
+  font-family: "Gtwalsheimprotrial, sans-serif;";
   font-weight: 100;
+  /* width: 70%; */
 }
+ 
+.words1{
+  font-size: 20px;
+  font-family: "Gtwalsheimprotrial, sans-serif;";
+  font-weight: 100;
+  width: 70%;
+
+}
+
 .content1{
   color: white;
 }
@@ -61,6 +71,10 @@ span{
 .scroll{
   color: blue;
  font-size: 20px;
+}
+
+.scroll:hover{
+  transform: rotate3d(5%);
 }
 
 a{
@@ -91,6 +105,9 @@ img{
   color: white;
   /* background-color: aliceblue; */
   /* margin-top: 200px; */
+  margin-top: 100px;
+  height: 800px;
+
   
 
 }
