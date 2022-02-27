@@ -15,21 +15,23 @@ body{
 .container{
   width: 60%;
   /* margin: auto; */
-  background: rgb(51, 200, 108);
+  /* background: rgb(51, 200, 108); */
   padding: 10px;
-  font-style: ;
-  /* margin-top: 150px; */
+
+  margin-top:200px;
   
 
 }
 
 img{
 
-  /* height: 200px; */
-  /* width: 200px; */
+  height: 500px;
+  width: 450px;
+  padding-left: 20px;
+  border-style: none;
   /* margin-right: 50px; */
-  height:20vh;
-width: 20vw; 
+  /* height:20vh; */
+/* width: 20vw;  */
   
 }
 
@@ -108,7 +110,7 @@ hr{
 
 .section2{
   color: white;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   /* margin-top: 200px; */
   /* margin-top: 100px; */
   /* height: 800px; */
@@ -127,15 +129,22 @@ hr{
 }
 
 
-/* SECTION 3 */
+/* SECTION 3 process+ */
 .section3{
   background-color: aqua;
   color: white;
+  height: 450px;
+}
+
+.process1{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 100px;
 }
 
 .siz{
   /* background-color: blue; */
-  width: 500px;
+   width: 1000vw; 
 }
 
 .siz1{
@@ -148,6 +157,12 @@ hr{
   /* vertical-align: middle; */
 }
 
+
+/* section 4 */
+.section4{
+  background-color: blueviolet;
+  /* height: 500PX; */
+}
 
 .email{
   display: flex;
