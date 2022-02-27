@@ -13,29 +13,34 @@ body{
 }
 
 .container{
-  width: 50%;
+  width: 60%;
   /* margin: auto; */
-  /* background: rgb(51, 200, 108); */
+  background: rgb(51, 200, 108);
   padding: 10px;
   font-style: ;
-  margin-top: 150px;
+  /* margin-top: 150px; */
   
 
 }
 
 img{
-  height: 200vh;
-  width: 500vw;
+
+  /* height: 200px; */
+  /* width: 200px; */
+  /* margin-right: 50px; */
+  height:20vh;
+width: 20vw; 
+  
 }
 
 .pic{
-  background-color: aqua;
-  height:400px;
+  /* background-color: aqua; */
+  /* height:400px; */
 }
 .section1{
   /* background-color: rgb(198, 200, 219); */
-width: 150%;
-scroll-snap-align: start;
+/* width: 150%; */
+/* scroll-snap-align: start; */
 
 }
 .hala{
@@ -74,9 +79,12 @@ span{
 }
 
 .scroll:hover{
-  transform: rotate3d(5%);
+  transform: scale(1.05);;
 }
 
+.scroll1{
+  color:#5f99ff;
+}
 a{
   text-decoration: none;
   color: white;
@@ -86,16 +94,13 @@ hr{
   color: rgb(21, 105, 214);
   /* width:100px; */
    
-    border:1.5px solid;
+    border:2px solid;
   width: 130px;
 
    
 }
 
-img{
-  height: 300px;
-  width: 200px;
-}
+
 
 
 
@@ -103,10 +108,10 @@ img{
 
 .section2{
   color: white;
-  /* background-color: aliceblue; */
+  background-color: aliceblue;
   /* margin-top: 200px; */
-  margin-top: 100px;
-  height: 800px;
+  /* margin-top: 100px; */
+  /* height: 800px; */
 
   
 
@@ -124,7 +129,7 @@ img{
 
 /* SECTION 3 */
 .section3{
-  /* background-color: aqua; */
+  background-color: aqua;
   color: white;
 }
 
