@@ -138,6 +138,9 @@ hr{
   background-repeat: no-repeat;
   /* height: 300px; */
   color: white;
+
+/* width:130%;   */
+
 }
 
 
@@ -171,8 +174,9 @@ hr{
 
 .work{
   color: white;
-  text-align: center;
-  /* vertical-align: middle; */
+  width: 60%;
+  margin: auto;
+
 }
 
 
@@ -202,5 +206,44 @@ hr{
 
 }
 
+.process1{
+  gap: 20px;
+}
 
 
+
+
+
+
+.margin {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.margin-img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+.image_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #EAEFF2;
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  opacity: 0;
+}
+.image_overlay:hover {
+  opacity: 1;
+}
+.image_icons a ion-icon{
+  color: #EAEFF2;
+}
