@@ -8,8 +8,7 @@
 body{
   background-color: black;
   /* display:block; */
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  
 }
 
 .container{
@@ -18,17 +17,18 @@ body{
   /* background: rgb(51, 200, 108); */
   padding: 10px;
 
-  margin-top:200px;
+  margin-top:50px;
   
 
 }
 
 img{
 
-  height: 500px;
+  height: 580px;
   width: 450px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   border-style: none;
+  opacity: var(#5f99ff);
   /* margin-right: 50px; */
   /* height:20vh; */
 /* width: 20vw;  */
@@ -67,7 +67,7 @@ span{
   font-size: 20px;
   font-family: "Gtwalsheimprotrial, sans-serif;";
   font-weight: 100;
-  width: 70%;
+  width: 130%;
 
 }
 
@@ -114,10 +114,22 @@ hr{
   /* margin-top: 200px; */
   /* margin-top: 100px; */
   /* height: 800px; */
-
-  
-
 }
+
+.graphic{
+  width: 180%;
+  /* background-color: aquamarine; */
+}
+
+.words2{
+  width: 130%;
+  font-size: 20px;
+  font-family: "Gtwalsheimprotrial, sans-serif;";
+  font-weight: 100;
+}
+
+
+
 
 .about{
   background-image: url(https://wallpapercave.com/wp/wp3284839.gif);
@@ -129,18 +141,24 @@ hr{
 }
 
 
+
+
+
+
+
+
 /* SECTION 3 process+ */
 .section3{
-  background-color: aqua;
+  /* background-color: aqua; */
   color: white;
   height: 450px;
 }
 
-.process1{
+/* .process1{
   display: flex;
   justify-content: space-around;
   margin-left: 100px;
-}
+} */
 
 .siz{
   /* background-color: blue; */
