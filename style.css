@@ -11,6 +11,11 @@ body{
   
 }
 
+nav{
+  position: sticky;
+  color: #5f99ff;
+}
+
 .container{
   width: 60%;
 /
@@ -47,6 +52,7 @@ img{
 .hala{
   font-size: 100px;
   
+  
 }
 
 span{
@@ -59,14 +65,14 @@ span{
   font-size: 20px;
   font-family: "Gtwalsheimprotrial, sans-serif;";
   font-weight: 100;
-  /* width: 70%; */
+  /* width: 50%; */
 }
  
 .words1{
   font-size: 20px;
   font-family: "Gtwalsheimprotrial, sans-serif;";
   font-weight: 100;
-  width: 130%;
+  width: 110%;
 
 }
 
@@ -109,14 +115,11 @@ hr{
 
 .section2{
   color: white;
-  /* background-color: aliceblue; */
-  /* margin-top: 200px; */
-  /* margin-top: 100px; */
-  /* height: 800px; */
+  
 }
 
 .graphic{
-  width: 180%;
+  width: 120%;
   /* background-color: aquamarine; */
 }
 
