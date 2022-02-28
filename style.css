@@ -11,10 +11,22 @@ body{
   
 }
 
-nav{
-  position: sticky;
+button{
+  width: 150px;
+  position: fixed;
   color: #5f99ff;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 30px 30px 0 30px
+
 }
+
+button:hover{
+  background-color: transparent;
+  border-style:outset;
+  
+}
+
 
 .container{
   width: 60%;
@@ -30,25 +42,15 @@ img{
 
   height: 580px;
   width: 450px;
-  /* padding-left: 20px; */
   border-style: none;
   opacity: var(#5f99ff);
-  /* margin-right: 50px; */
-  /* height:20vh; */
-/* width: 20vw;  */
+ 
   
 }
 
-.pic{
-  /* background-color: aqua; */
-  /* height:400px; */
-}
-.section1{
-  /* background-color: rgb(198, 200, 219); */
-/* width: 150%; */
-/* scroll-snap-align: start; */
 
-}
+
+
 .hala{
   font-size: 100px;
   
@@ -61,11 +63,12 @@ span{
 }
 
 
+
 .words{
   font-size: 20px;
   font-family: "Gtwalsheimprotrial, sans-serif;";
   font-weight: 100;
-  /* width: 50%; */
+ 
 }
  
 .words1{
@@ -99,8 +102,6 @@ a{
 
 hr{
   color: rgb(21, 105, 214);
-  /* width:100px; */
-   
     border:2px solid;
   width: 130px;
 
@@ -120,7 +121,7 @@ hr{
 
 .graphic{
   width: 120%;
-  /* background-color: aquamarine; */
+ 
 }
 
 .words2{
@@ -135,13 +136,11 @@ hr{
 
 .about{
   background-image: url(https://wallpapercave.com/wp/wp3284839.gif);
-  /* background-image: url(https://i.makeagif.com/media/6-21-2021/Ml33kt.gif); */
   background-size: cover;
   background-repeat: no-repeat;
-  /* height: 300px; */
   color: white;
 
-/* width:130%;   */
+
 
 }
 
@@ -154,7 +153,7 @@ hr{
 
 /* SECTION 3 process+ */
 .section3{
-  /* background-color: aqua; */
+
   color: white;
   height: 450px;
 }
