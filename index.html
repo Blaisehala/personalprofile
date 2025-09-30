@@ -1,362 +1,1469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | IT Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Blaise Hala - Cybersecurity Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #0f172a;
+            --accent-color: #06b6d4;
+            --success-color: #10b981;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --gradient-1: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+            --gradient-2: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            --gradient-3: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            --shadow-soft: 0 10px 25px rgba(30, 64, 175, 0.1);
+            --shadow-medium: 0 20px 40px rgba(30, 64, 175, 0.15);
+            --shadow-strong: 0 25px 50px rgba(15, 23, 42, 0.25);
+        }
 
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      max-width: 1200px;
-      margin: 40px auto;
-      gap: 20px;
-      padding: 0 20px;
-    }
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-    .sidebar {
-      flex: 1;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      min-width: 250px;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .sidebar img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .sidebar button {
-      background-color: #28a745;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: background-color 0.3s;
-    }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .sidebar button:hover {
-      background-color: #218838;
-    }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-    .socials {
-      margin-top: 20px;
-    }
-    .socials a {
-      margin: 0 8px;
-      font-size: 1.2rem;
-    }
+        .nav-link:hover, .nav-link.active {
+            background: var(--gradient-1);
+            color: white;
+            transform: translateY(-2px);
+        }
 
-    .main-content {
-      flex: 3;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
+        .cta-button {
+            background: var(--gradient-3);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
 
-    .name {
-      font-size: 2rem;
-      font-weight: 700;
-    }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
 
-    .title {
-      color: #555;
-      margin-bottom: 10px;
-    }
+        /* Page Sections */
+        .page-section {
+            min-height: 100vh;
+            padding: 100px 2rem 50px;
+            display: none;
+        }
 
-    .tags {
-      margin: 20px 0;
-    }
+        .page-section.active {
+            display: block;
+        }
 
-    .tag {
-      display: inline-block;
-      background-color: #eef;
-      color: #0077cc;
-      padding: 6px 12px;
-      margin: 4px 4px 4px 0;
-      border-radius: 20px;
-      font-size: 0.85rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .summary {
-      margin: 30px 0;
-    }
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 80vh;
+        }
 
-    .two-column {
-      display: flex;
-      gap: 40px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
 
-    .column {
-      flex: 1;
-      min-width: 250px;
-    }
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
 
-    .column h3 {
-      margin-bottom: 10px;
-      color: #0077cc;
-    }
+        .hero-content .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
 
-    .column ul {
-      list-style: none;
-      padding: 0;
-    }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-    .column ul li {
-      margin-bottom: 10px;
-    }
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    .info-cards {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
 
-    .card {
-      flex: 1;
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      font-size: 0.95rem;
-      min-width: 250px;
-    }
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
 
-    .accordion {
-      margin-bottom: 20px;
-    }
+        /* Creative Profile Section */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
 
-    .accordion-item {
-      background: #f9f9f9;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
+        .profile-showcase {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .accordion-item h4 {
-      margin: 0;
-      padding: 15px 20px;
-      background: #eaeaea;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
 
-    .accordion-item .content {
-      padding: 15px 20px;
-      display: none;
-      background: #fff;
-    }
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
 
-    footer {
-      text-align: center;
-      margin: 40px 0;
-      color: #aaa;
-      font-size: 0.8rem;
-    }
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
 
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .container {
-        flex-direction: column;
-      }
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 2s;
+        }
 
-      .sidebar {
-        max-width: 100%;
-        margin-bottom: 20px;
-      }
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
 
-      .two-column {
-        flex-direction: column;
-      }
+        .floating-element:nth-child(4) {
+            bottom: 10%;
+            right: 20%;
+            animation-delay: 1s;
+        }
 
-      .info-cards {
-        flex-direction: column;
-      }
-    }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
 
-    @media (max-width: 600px) {
-      .name {
-        font-size: 1.5rem;
-      }
+        .profile-card-3d {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-strong);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            animation: slideInFromBack 1s ease-out;
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
 
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-      }
+        @keyframes slideInFromBack {
+            0% {
+                transform: translateZ(-500px) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translateZ(0) scale(1);
+                opacity: 1;
+            }
+        }
 
-      .tag {
-        margin-bottom: 6px;
-      }
+        .profile-card-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
 
-      .sidebar img {
-        width: 120px;
-        height: 120px;
-      }
+        .profile-card-3d::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(30, 64, 175, 0.05), transparent);
+            animation: shimmer 3s infinite;
+            pointer-events: none;
+        }
 
-      .sidebar button {
-        width: 100%;
-      }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
 
-      .accordion-item h4 {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+        .profile-image-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--success-color);
+            transition: all 0.5s ease;
+            animation: profileGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes profileGlow {
+            0% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1) rotateY(15deg);
+        }
+
+        .status-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background: var(--success-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .profile-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-subtitle {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .profile-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-medium);
+            font-weight: 600;
+            z-index: 999;
+            animation: slideInCounter 1s ease-out 2s both;
+        }
+
+        @keyframes slideInCounter {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .counter-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            animation: counterPulse 2s infinite;
+        }
+
+        @keyframes counterPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .project-image {
+            height: 200px;
+            background: var(--gradient-1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(30, 64, 175, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .skills-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+
+        .skills-category h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: rgba(30, 64, 175, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(30, 64, 175, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .visitor-counter {
+                bottom: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                box-shadow: var(--shadow-soft);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<div class="container">
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <img src="./images/Blaise  Hala.jpeg" alt="Your photo" />
-    <h3>Blaise Hala</h3>
-    <p>IT Support & Network Engineer</p>
-   <a href=""></a> <button>Hire Me</button>
-
-
-   
-    <div class="socials">
-
-      
-      <a href="https://www.linkedin.com/in/blaise-hala-a32b2b337/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Blaisehala" target="_blank">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Main content -->
-  <div class="main-content">
-    <div class="name">Blaise Hala</div>
-    <div class="title">IT Support & Network Engineer</div>
-
-    <div class="tags">
-      <span class="tag">IT Support</span>
-      <span class="tag">Network Engineering</span>
-      <span class="tag">Cybersecurity</span>
-      <span class="tag">Django</span>
-      <span class="tag">Healthcare IT</span>
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <span class="counter-icon">👁️</span>
+        <span id="visitor-count">1,247</span> visitors
     </div>
 
-    <div class="summary">
-      <p>I’m an IT professional with hands-on experience in healthcare IT environments, specializing in IT support, network administration, and security. Proven track record managing infrastructures, audits, and compliance projects. Passionate about delivering secure and efficient solutions.</p>
-    </div>
-
-    <!-- Portfolio & Experience -->
-    <div class="two-column">
-      <div class="column">
-        <h3>Portfolio</h3>
-        <ul>
-          <li><strong>Healthcare Audit Tool</strong> - Automated compliance checks, reducing audit time by 40% of overall time anticipated</li>
-          <li><strong>Network Monitoring Dashboard</strong> - Real-time traffic and alerting system using Django.</li>
-          <li><strong>Cloud Migration - Trendstar Homecare</strong> - Improved system uptime and remote capabilities.</li>
-        </ul>
-      </div>
-
-      <div class="column">
-        <h3>Experience</h3>
-        <ul>
-          <li><strong>Trendstar Homecare</strong> (IT Admin) <br/> 2024 - Present</li>
-          <li><strong>Hood College</strong> (Network Support Intern) <br/> 2023 - 2024</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Info Cards -->
-    <div class="info-cards">
-      <div class="card">
-        <h4>Availability</h4>
-        <p>Part-time / Contract</p>
-      </div>
-      <div class="card">
-        <h4>Preferred Environment</h4>
-        <p>Windows, Linux, Cisco, AWS, Microsoft 365, Git, Agile</p>
-      </div>
-      <div class="card">
-        <h4>The most amazing...</h4>
-        <p>...project I worked on was an IT infrastructure upgrade that enabled remote healthcare support.</p>
-      </div>
-    </div>
-
-    <!-- Accordion Section -->
-    <div class="accordion">
-      <div class="accordion-item">
-        <h4 onclick="toggleAccordion(this)">Work Experience</h4>
-        <div class="content">
-          <p><strong>Trendstar Homecare</strong> - IT Administrator</p>
-          <p>Managed healthcare IT systems, audits, network security, and support.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Blaise Hala</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('about')">About</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('projects')">Projects</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="tel:+15713565667" class="cta-button"><i class="fas fa-phone"></i> Call Me</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-      </div>
+    </nav>
 
-      <div class="accordion-item">
-        <h4 onclick="toggleAccordion(this)">Education</h4>
-        <div class="content">
-          <p>Hood College - MS in Information Technology</p>
-          <p>Relevant Courses: Network Security, Cloud Computing, IT Governance</p>
+    <!-- Home Page -->
+    <section class="page-section active fade-in" id="home">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Cybersecurity Analyst & Data Specialist</h1>
+                    <p class="subtitle">Python Security Analytics & Compliance Expert</p>
+                    <p class="description">
+                        Information Technology System Administrator with expertise in cyber risk data analysis, 
+                        Python-based security analytics, and compliance reporting. Currently specializing in 
+                        threat & vulnerability management and HIPAA compliance at Trendstar LLC.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#" class="btn-primary" onclick="showPage('projects')">
+                            <i class="fas fa-shield-alt"></i> View Projects
+                        </a>
+                        <a href="/asset/Blaise Hala - Resume 2025.pdf" download class="btn-secondary">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-showcase">
+                        <div class="floating-elements">
+                            <div class="floating-element">
+                                <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--primary-color);"></i>
+                            </div>
+                            <div class="floating-element">
+                                <i class="fas fa-lock" style="font-size: 1.5rem; color: var(--accent-color);"></i>
+                            </div>
+                            <div class="floating-element">
+                                <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--success-color);"></i>
+                            </div>
+                            <div class="floating-element">
+                                <i class="fas fa-code" style="font-size: 1.8rem; color: var(--primary-color);"></i>
+                            </div>
+                        </div>
+                        <div class="profile-card-3d">
+                            <div class="profile-image-container">
+                                <img src="./Images/odhis.png" alt="Blaise Hala" class="profile-image">
+                                <div class="status-indicator"></div>
+                            </div>
+                            <div class="profile-title">Blaise Hala</div>
+                            <div class="profile-subtitle">IT System Administrator</div>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Mclean, Virginia</span>
+                            </div>
+                            <div class="profile-location">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>MS Information Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">6+</div>
+                    <p>Months Current Role</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <p>Security Skills Certified</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <p>Years Python Experience</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <p>Compliance Record</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="accordion-item">
-        <h4 onclick="toggleAccordion(this)">Skills</h4>
-        <div class="content">
-          <ul>
-            <li>IT Support & Troubleshooting</li>
-            <li>Network Administration (Cisco, Fortinet)</li>
-            <li>Django & Python Scripting</li>
-            <li> IT Compliance</li>
-            <li>Active Directory & Microsoft 365</li>
-          </ul>
+    <!-- About Page -->
+    <section class="page-section fade-in" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Cybersecurity professional with expertise in data analytics, compliance, and system administration</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <p>
+                        As an Information Technology System Administrator at Trendstar LLC, I specialize in cyber risk 
+                        data analysis using Python for security analytics and compliance reporting. My role involves 
+                        managing critical infrastructure while ensuring HIPAA compliance and maintaining robust security protocols.
+                    </p>
+                    <p>
+                        With my Master's degree in Information Technology and Linux Administration certification pursuit, 
+                        I bring a comprehensive understanding of both defensive cybersecurity measures and data-driven 
+                        decision making. I excel in threat and vulnerability management, creating secure systems that 
+                        protect sensitive healthcare data.
+                    </p>
+                    <p>
+                        My expertise spans from Windows Server management to advanced data visualization, always focusing 
+                        on creating actionable insights from complex security datasets. I'm passionate about mentoring 
+                        others and contributing to cross-team collaboration initiatives.
+                    </p>
+                </div>
+                
+                <div class="skills-section">
+                    <h3>Technical Expertise</h3>
+                    
+                    <div class="skills-category">
+                        <h4>Cybersecurity & Compliance</h4>
+                        <div class="skills-list">
+                            <span class="skill-item">Threat & Vulnerability Management</span>
+                            <span class="skill-item">HIPAA Compliance</span>
+                            <span class="skill-item">Information Security</span>
+                            <span class="skill-item">Network Security</span>
+                            <span class="skill-item">Vulnerability Assessment</span>
+                            <span class="skill-item">ISO 27001</span>
+                            <span class="skill-item">Healthcare Ethics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h4>System Administration</h4>
+                        <div class="skills-list">
+                            <span class="skill-item">Windows Server</span>
+                            <span class="skill-item">Linux Administration</span>
+                            <span class="skill-item">System Management</span>
+                            <span class="skill-item">IT Infrastructure</span>
+                            <span class="skill-item">IT Support</span>
+                            <span class="skill-item">VM Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h4>Data Analytics & Development</h4>
+                        <div class="skills-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">R Programming</span>
+                            <span class="skill-item">Django</span>
+                            <span class="skill-item">REST APIs</span>
+                            <span class="skill-item">Dashboard Design</span>
+                            <span class="skill-item">Dynamic Visualization</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4>Leadership & Collaboration</h4>
+                        <div class="skills-list">
+                            <span class="skill-item">Teaching</span>
+                            <span class="skill-item">Mentoring</span>
+                            <span class="skill-item">Cross-team Collaboration</span>
+                            <span class="skill-item">Empathy Mapping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-  </div> <!-- End main content -->
+    <!-- Projects Page -->
+    <section class="page-section fade-in" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Cybersecurity and data analytics projects showcasing real-world impact</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HIPAA Compliance Monitoring System</h3>
+                        <p class="project-description">
+                            Developed a comprehensive Python-based monitoring system for HIPAA compliance tracking. 
+                            Features automated vulnerability assessments, real-time threat detection, and 
+                            compliance reporting dashboards for healthcare environments.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">HIPAA</span>
+                            <span class="tag">Vulnerability Assessment</span>
+                            <span class="tag">Compliance Reporting</span>
+                            <span class="tag">Healthcare Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cyber Risk Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Built an interactive dashboard using Python and PostgreSQL for cyber risk data analysis. 
+                            Provides real-time visualization of threat patterns, vulnerability trends, and 
+                            risk assessment metrics for executive reporting.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Risk Analytics</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Executive Reporting</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Automated Security Incident Response</h3>
+                        <p class="project-description">
+                            Designed and implemented an automated incident response system using Python and REST APIs. 
+                            Integrates with existing security tools to provide rapid threat detection, 
+                            automated containment, and detailed forensic reporting.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">REST APIs</span>
+                            <span class="tag">Incident Response</span>
+                            <span class="tag">Security Automation</span>
+                            <span class="tag">Forensics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Network Security Monitoring Platform</h3>
+                        <p class="project-description">
+                            Developed a comprehensive network security monitoring solution with Django backend. 
+                            Features real-time network traffic analysis, anomaly detection, and 
+                            automated alert generation for suspicious activities.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">Network Security</span>
+                            <span class="tag">Anomaly Detection</span>
+                            <span class="tag">Real-time Monitoring</span>
+                            <span class="tag">Alert Systems</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div> <!-- End container -->
+    <!-- Contact Page -->
+    <section class="page-section fade-in" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+                <p>Ready to secure your organization's data? Let's discuss your cybersecurity needs.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:bho2@hood.edu">bho2@hood.edu</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+15713565667">571 356 5667</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Mclean, Virginia, USA</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h4>Current Role</h4>
+                            <p>IT System Administrator at Trendstar LLC</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/blaise-hala-a32b2b337/" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Blaisehala" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <div class="skills-section">
+                        <h3>Services I Offer</h3>
+                        <div class="skills-category">
+                            <h4>Cybersecurity Consulting</h4>
+                            <div class="skills-list">
+                                <span class="skill-item">Risk Assessment</span>
+                                <span class="skill-item">Compliance Auditing</span>
+                                <span class="skill-item">Security Architecture</span>
+                                <span class="skill-item">Incident Response</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h4>Data Analytics & Development</h4>
+                            <div class="skills-list">
+                                <span class="skill-item">Security Analytics</span>
+                                <span class="skill-item">Custom Dashboards</span>
+                                <span class="skill-item">Automated Reporting</span>
+                                <span class="skill-item">API Development</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h4>Training & Education</h4>
+                            <div class="skills-list">
+                                <span class="skill-item">Security Awareness</span>
+                                <span class="skill-item">Technical Training</span>
+                                <span class="skill-item">Team Mentoring</span>
+                                <span class="skill-item">Best Practices</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  &copy; 2025 Blaise Hala. All rights reserved.
-</footer>
+    <script>
+        // Navigation functionality
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to clicked link
+            event.target.classList.add('active');
+            
+            // Close mobile menu if open
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
 
-<script>
-  function toggleAccordion(element) {
-    const content = element.nextElementSibling;
-    const isVisible = content.style.display === 'block';
-    content.style.display = isVisible ? 'none' : 'block';
-  }
-</script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
 
+        // Visitor counter animation
+        function animateVisitorCounter() {
+            const counter = document.getElementById('visitor-count');
+            const target = 1247;
+            let current = 1000;
+            const increment = 5;
+            const duration = 2000;
+            const stepTime = duration / ((target - current) / increment);
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = current.toLocaleString();
+                }
+            }, stepTime);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start visitor counter animation after delay
+            setTimeout(animateVisitorCounter, 3000);
+            
+            // Add animation delays to cards
+            const cards = document.querySelectorAll('.project-card, .stat-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Add hover effects to skill items
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(248, 250, 252, 0.98)';
+                    navbar.style.boxShadow = '0 2px 20px rgba(30, 64, 175, 0.1)';
+                } else {
+                    navbar.style.background = 'rgba(248, 250, 252, 0.95)';
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+        });
+
+        // Enhanced interaction effects
+        let skillClickCount = 0;
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('click', function() {
+                skillClickCount++;
+                
+                // Cycle through cybersecurity-themed colors
+                const colors = [
+                    'linear-gradient(45deg, #1e40af, #3b82f6)',
+                    'linear-gradient(45deg, #dc2626, #ef4444)',
+                    'linear-gradient(45deg, #059669, #10b981)',
+                    'linear-gradient(45deg, #7c3aed, #8b5cf6)'
+                ];
+                
+                this.style.background = colors[skillClickCount % colors.length];
+                this.style.color = 'white';
+                
+                if (skillClickCount === 15) {
+                    alert('🔐 Security Expert Mode Activated! Thanks for exploring my cybersecurity portfolio!');
+                    skillClickCount = 0;
+                    // Reset all skill items
+                    document.querySelectorAll('.skill-item').forEach(skill => {
+                        skill.style.background = 'rgba(30, 64, 175, 0.1)';
+                        skill.style.color = 'var(--primary-color)';
+                    });
+                }
+            });
+        });
+
+        // Animate stats on scroll with cybersecurity theme
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const finalText = statNumber.textContent;
+                    let currentNumber = 0;
+                    
+                    // Handle different number formats
+                    const hasPlus = finalText.includes('+');
+                    const hasPercent = finalText.includes('%');
+                    const targetNumber = parseInt(finalText.replace(/[^0-9]/g, ''));
+                    
+                    const increment = targetNumber > 100 ? 25 : targetNumber > 50 ? 5 : 1;
+                    
+                    const countUp = setInterval(() => {
+                        currentNumber += increment;
+                        if (currentNumber >= targetNumber) {
+                            statNumber.textContent = finalText;
+                            clearInterval(countUp);
+                        } else {
+                            let displayText = currentNumber.toString();
+                            if (hasPlus) displayText += '+';
+                            if (hasPercent) displayText += '%';
+                            statNumber.textContent = displayText;
+                        }
+                    }, 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+
+        // Add particle effect to profile image on hover
+        document.querySelector('.profile-image').addEventListener('mouseenter', function() {
+            // Create temporary particle effects
+            for (let i = 0; i < 5; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '4px';
+                particle.style.height = '4px';
+                particle.style.background = 'var(--accent-color)';
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '1000';
+                
+                const rect = this.getBoundingClientRect();
+                particle.style.left = rect.left + Math.random() * rect.width + 'px';
+                particle.style.top = rect.top + Math.random() * rect.height + 'px';
+                
+                document.body.appendChild(particle);
+                
+                // Animate particle
+                particle.animate([
+                    { transform: 'translateY(0px)', opacity: 1 },
+                    { transform: 'translateY(-50px)', opacity: 0 }
+                ], {
+                    duration: 1000,
+                    easing: 'ease-out'
+                }).onfinish = () => particle.remove();
+            }
+        });
+
+        // Update visitor counter periodically (simulated)
+        setInterval(() => {
+            const counter = document.getElementById('visitor-count');
+            const currentCount = parseInt(counter.textContent.replace(/,/g, ''));
+            const increment = Math.floor(Math.random() * 3) + 1; // Random 1-3
+            const newCount = currentCount + increment;
+            counter.textContent = newCount.toLocaleString();
+        }, 30000); // Update every 30 seconds
+
+        // Add typing effect to hero subtitle
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.textContent = '';
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, speed);
+        }
+
+        // Initialize typing effect after page loads
+        setTimeout(() => {
+            const subtitle = document.querySelector('.subtitle');
+            const originalText = subtitle.textContent;
+            typeWriter(subtitle, originalText, 80);
+        }, 1500);
+
+        // Add smooth reveal animation for sections
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observe all major elements for reveal animation
+        document.querySelectorAll('.project-card, .stat-card, .skills-section, .contact-info').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            revealObserver.observe(el);
+        });
+
+        // Enhanced profile card interaction
+        const profileCard = document.querySelector('.profile-card-3d');
+        profileCard.addEventListener('mousemove', (e) => {
+            const rect = profileCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            profileCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        profileCard.addEventListener('mouseleave', () => {
+            profileCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+
+        // Add security-themed Easter egg
+        let securitySequence = [];
+        const targetSequence = ['KeyS', 'KeyE', 'KeyC', 'KeyU', 'KeyR', 'KeyE'];
+        
+        document.addEventListener('keydown', (e) => {
+            securitySequence.push(e.code);
+            if (securitySequence.length > targetSequence.length) {
+                securitySequence.shift();
+            }
+            
+            if (JSON.stringify(securitySequence) === JSON.stringify(targetSequence)) {
+                // Create security badge
+                const badge = document.createElement('div');
+                badge.innerHTML = '🔐 SECURITY EXPERT MODE ACTIVATED';
+                badge.style.position = 'fixed';
+                badge.style.top = '50%';
+                badge.style.left = '50%';
+                badge.style.transform = 'translate(-50%, -50%)';
+                badge.style.background = 'linear-gradient(45deg, #dc2626, #ef4444)';
+                badge.style.color = 'white';
+                badge.style.padding = '1rem 2rem';
+                badge.style.borderRadius = '10px';
+                badge.style.fontSize = '1.2rem';
+                badge.style.fontWeight = 'bold';
+                badge.style.zIndex = '9999';
+                badge.style.boxShadow = '0 10px 30px rgba(220, 38, 38, 0.5)';
+                badge.style.animation = 'pulse 1s infinite';
+                
+                document.body.appendChild(badge);
+                
+                setTimeout(() => {
+                    badge.remove();
+                    securitySequence = [];
+                }, 3000);
+            }
+        });
+    </script>
 </body>
 </html>
